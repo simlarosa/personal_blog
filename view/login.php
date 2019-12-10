@@ -12,32 +12,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">My website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">Chi Sono</a>
-                </li>
-            </ul>
-            <a class="btn btn-success px-5  mr-3" role="button" href="login.html">Login</a>
-            <a class="btn btn-primary my-2 px-5" role="button" href="post.html">Post</a>
-        </div>
-    </nav>
+<?php require 'modules/header.php'; ?>
 
 
-
-
-    <div class="container mt-4">
+    <div class="d-flex align-items-center vh-100 mt-n5">
+    <div class="container mt-n5">
         <div class="row">
-            <div class="col-4 offset-4">
+            <div class="col-10 offset-1 col-lg-4 offset-lg-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="card-title">
@@ -46,12 +27,12 @@
                         <form action="login.php" method="post">
                             <div class="form-group">
                                 <label for="inputEmail">Email address</label>
-                                <input type="email" class="form-control" id="inputEmail" name="Username"
+                                <input type="email" class="form-control" id="inputEmail" name="email"
                                     placeholder="Enter your email address">
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail">Password</label>
-                                <input type="password" class="form-control" id="inputPassword" name="Password"
+                                <input type="password" class="form-control" id="inputPassword" name="password"
                                     placeholder="Enter your best password">
                             </div>
                             <button type="submit" class="btn btn-success">Login</button>
@@ -61,7 +42,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 </body>
 

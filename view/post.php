@@ -12,28 +12,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">My website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">Chi Sono</a>
-                </li>
-            </ul>
-            <a class="btn btn-success px-5  mr-3" role="button" href="login.html">Login</a>
-            <a class="btn btn-primary my-2 px-5" role="button" href="post.html">Post</a>
-        </div>
-    </nav>
+<?php require 'modules/header.php'; ?>
+
     <div class="container mt-5">
         <div class="row">
-            <div class="col-8 offset-2">
+            <div class="col-lg-8 col-10 offset-lg-2 offset-1">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="card-title">
@@ -43,15 +26,17 @@
                             <div class="form-group">
                                 <label for="inputTitle">Titolo:</label>
                                 <input type="text" class="form-control" id="inputTitle" name="Title">
+                                <small id="textHelp" class="form-text text-muted">Decide the best title for you amazing blog post</small>
                             </div>
                             <div class="form-group">
                                 <label for="inputContent">Contenuto:</label>
-                                <textarea name="Content" rows="5" cols="40" class="form-control"
-                                    id="inputTitle"></textarea>
+                                <textarea name="Content" rows="5" cols="40" class="form-control" id="inputTitle"></textarea>
+                                <small id="contentHelp" class="form-text text-muted">Put your content here!</small>
                             </div>
                             <div class="form-group">
                                 <label for="inputTag">Tag:</label>
                                 <input type="text" class="form-control" id="inputTag" name="Tag">
+                                <small id="tagHelp" class="form-text text-muted">Thanks to the tag, we can organize the blog and categorize the content</small>
                             </div>
                             <button type="submit" class="btn btn-success">Aggiungi</button>
                         </form>
