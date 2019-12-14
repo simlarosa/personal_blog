@@ -1,4 +1,18 @@
 <?php require_once "core/bootstrap.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Il mio blog personale</title>
+</head>
+
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php"><img src="assets/logo_small.png" class="img-responsive" alt="brand"></a>
@@ -15,7 +29,7 @@
                     <a class="nav-link" href="about-us.php">Chi Sono</a>
                 </li>
             </ul>
-            <?php if(isLogged()){ ?>
+            <?php if($user->isLogged()){ ?>
                 <a class="btn btn-primary my-2 px-5 mr-3" role="button" href="post.php">Post</a>
                 <a class="btn btn-danger my-2 px-5 mr-3" role="button" href="logout.php">Logout</a>
             <?php } else { ?>

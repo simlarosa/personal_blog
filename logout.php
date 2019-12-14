@@ -2,5 +2,5 @@
 
 require_once "core/bootstrap.php";
 
-logoutUser();
+$user->logoutUser();
 header("location: index.php");

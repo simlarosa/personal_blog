@@ -1,11 +1,15 @@
 <?php
 require_once "core/bootstrap.php";
 
+
 if($_POST['email'] && $_POST['password']) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if(loginUser($email, $password)){
+    $user->setEmail($email);
+    $user->setPassword($password);
+    
+    if($user->loginUser()){
         header("location: index.php");
     } else {
         echo "Dati non corretti";
@@ -14,7 +18,4 @@ if($_POST['email'] && $_POST['password']) {
 
 
 include 'view/login.php';
-
-
-
 ?>
