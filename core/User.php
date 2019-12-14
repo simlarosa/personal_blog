@@ -2,13 +2,13 @@
 
 class User
 {
-    private $id;
+    //private $id;
     private $email;
     private $password;
 
     //dichiarazioni costanti
-    const ADMIN_EMAIL = 'admin@admin.it';
-    const ADMIN_PASSWORD_HASH = '$2y$12$X8oiIDcFef1UdBpSxEZhJO.tO05Ts7BZnMY6Ehsd8EjMTN9O5Z8XW'; //admin
+    private const ADMIN_EMAIL = 'admin@admin.it';
+    private const ADMIN_PASSWORD_HASH = '$2y$12$X8oiIDcFef1UdBpSxEZhJO.tO05Ts7BZnMY6Ehsd8EjMTN9O5Z8XW'; //admin
 
     public function __construct(string $email, string $password)
     {
@@ -18,8 +18,8 @@ class User
 
     public function loginUser(): bool
     {
-        if ($this->email === ADMIN_EMAIL) {
-            if (password_verify($this->password, ADMIN_PASSWORD_HASH)) {
+        if ($this->email === self::ADMIN_EMAIL) {
+            if (password_verify($this->password, self::ADMIN_PASSWORD_HASH)) {
                 $_SESSION['loggedUser'] = [
                     'name' => 'Admin',
                     'email' => $this->email,
