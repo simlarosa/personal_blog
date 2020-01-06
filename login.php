@@ -1,15 +1,11 @@
 <?php
-require_once "core/bootstrap.php";
+require_once '/Applications/MAMP/htdocs/personal_blog/core/config/bootstrap.php';
 
 
 if($_POST['email'] && $_POST['password']) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    $user->setEmail($email);
-    $user->setPassword($password);
-    
-    if($user->loginUser()){
+    if($authenticator->loginUser($email, $password)){
         header("location: index.php");
     } else {
         echo "Dati non corretti";

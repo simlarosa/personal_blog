@@ -1,4 +1,4 @@
-<?php require_once "core/bootstrap.php"; ?>
+<?php require_once "/Applications/MAMP/htdocs/personal_blog/core/config/bootstrap.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +27,7 @@
                     <a class="nav-link" href="about-us.php">Chi Sono</a>
                 </li>
             </ul>
-            <?php if ($user->isLogged()) { ?>
+            <?php if ($authenticator->isLogged()) { ?>
                 <a class="btn btn-primary my-2 px-5 mr-3" role="button" href="post.php">Post</a>
                 <a class="btn btn-danger my-2 px-5 mr-3" role="button" href="logout.php">Logout</a>
             <?php } else { ?>

@@ -1,8 +1,11 @@
 <?php
-class Posts
+
+//require_once 'Post.php';
+
+class PostRepository
 {
-    private $posts;
-    private $filename = __DIR__ . DIRECTORY_SEPARATOR . 'post.json';
+    private $posts = [];
+    private $filename = "core/post.json";
 
     public function __construct()
     {
@@ -19,7 +22,12 @@ class Posts
     public function getAllPosts()
     {
         $rawData = file_get_contents($this->filename);
-        $this->posts = json_decode($rawData, true);
+        $rawData = json_decode($rawData, true);
+
+        foreach ($rawData as $postData) {
+            $this->posts[] = Post::fromJson($postData);
+        }
+
         return $this->posts;
     }
 
@@ -27,7 +35,7 @@ class Posts
     {
         $this->posts = $this->getAllPosts();
         foreach ($this->posts as $post) {
-            foreach ($post['tag'] as $single_tag) {
+            foreach ($post->tag() as $single_tag) {
                 if ($single_tag == $tag) {
                     $tempPosts[] = $post;
                 }

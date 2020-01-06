@@ -1,6 +1,5 @@
 <?php 
+require_once '/Applications/MAMP/htdocs/personal_blog/core/config/bootstrap.php';
 
-require_once "core/bootstrap.php";
-
-$user->logoutUser();
+$authenticator->logoutUser();
 header("location: index.php");

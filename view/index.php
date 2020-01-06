@@ -12,13 +12,13 @@
         <?php foreach ($posts as $post) {   ?>
             <div class="row my-4">
                 <article>
-                    <h3><?= $post['title'] ?></h3>
+                    <h3><?= $post->title(); ?></h3>
                     <p>
-                        <?= $post['content']  ?>
+                        <?= $post->content();  ?>
                     </p>
-                    <p>Tags: <?php foreach ($post['tag'] as $index => $tag) { ?>
+                    <p>Tags: <?php foreach ($post->tag() as $index => $tag) { ?>
                             <?php
-                                    $delimiter = $index < (count($post['tag']) - 1) ? ', ' : '.';
+                                    $delimiter = $index < (count($post->tag()) - 1) ? ', ' : '.';
                                     ?>
                             <a href="index.php?tag=<?= $tag ?>"><?= $tag ?></a><?= $delimiter ?>
                         <?php } ?></p>

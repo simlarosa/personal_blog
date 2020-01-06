@@ -1,10 +1,10 @@
 <?php
-require_once 'core/bootstrap.php';
+require_once '/Applications/MAMP/htdocs/personal_blog/core/config/bootstrap.php';
 
 if (!empty($_GET['tag'])) {
     $posts = $postArchive->getAllPostsByTag($_GET['tag']);
    } else {
-    $posts = $postArchive->renderPosts();
+    $posts = $postArchive->getAllPosts();
    }
 
 include 'view/index.php';
