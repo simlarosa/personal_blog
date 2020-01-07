@@ -8,7 +8,7 @@
                         <div class="card-title">
                             <h5>Aggiungi Post</h5>
                         </div>
-                        <form action="post.php" method="POST">
+                        <form action="post.php" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="inputTitle">Titolo:</label>
                                 <input type="text" class="form-control" id="inputTitle" name="Title">
@@ -23,6 +23,10 @@
                                 <label for="inputTag">Tag:</label>
                                 <input type="text" class="form-control" id="inputTag" name="Tag">
                                 <small id="tagHelp" class="form-text text-muted">Thanks to the tag, we can organize the blog and categorize the content</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTag">Immagine post:</label>
+                                <input type="file" name="upload" id="upload">  
                             </div>
                             <button type="submit" class="btn btn-success">Aggiungi</button>
                         </form>

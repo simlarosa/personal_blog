@@ -67,6 +67,7 @@ class UserRepository
             echo $err = "utente non esistente \n";
         }
     }
+    
 
     public function getAllUser()
     {

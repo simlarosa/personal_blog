@@ -8,9 +8,9 @@ require_once '/Applications/MAMP/htdocs/personal_blog/core/model/Post.php';
 require_once '/Applications/MAMP/htdocs/personal_blog/core/config/db_config.php';
 require_once '/Applications/MAMP/htdocs/personal_blog/core/services/AuthenticationController.php';
 
-$postArchive = new PostRepository;
 $userRepo = new UserRepository($mysqli);
 $authenticator = new AutenthicationController($userRepo);
+$postRepo = new PostRepository($userRepo, $mysqli);
 
 
 session_start();
